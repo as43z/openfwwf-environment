@@ -45,7 +45,8 @@ clone_repo () {
 		echo -e "${YELLOW}WARN${RESET}: There has been a problem when calling clone_repo.\nThis function needs 1 paramenter:\n\t1) url - URL of the package."
 	else
 		local SUCCESS=1
-		git clone ""
+		git clone $1 && SUCCESS=0
+		echo_task $SUCCESS "git clone $1"
 	fi
 }
 
@@ -61,3 +62,8 @@ sudo apt update
 while read package; do
 	install_package $package
 done <requirements
+
+# Clone the repos
+while read repo; do
+	clone_repo $repo
+done <repos
