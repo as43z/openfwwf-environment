@@ -10,3 +10,4 @@ Supported OS:
 
 TODOs!
 	- Make installer a bit more general to support other OSs. (If this goes somewhere)
+	- Make the repo downloader clone the repo into the HOME directory! (Quite upsetting that the clone happens into the same directory)
