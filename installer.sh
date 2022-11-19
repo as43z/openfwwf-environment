@@ -45,8 +45,8 @@ clone_repo () {
 		echo -e "${YELLOW}WARN${RESET}: There has been a problem when calling clone_repo.\nThis function needs 1 paramenter:\n\t1) url - URL of the package."
 	else
 		local SUCCESS=1
-		git clone $HOME $1 && SUCCESS=0
-		echo_task $SUCCESS "git clone $HOME $1"
+		git clone_repo $1 && SUCCESS=0
+		echo_task $SUCCESS "git clone $1"
 	fi
 }
 
