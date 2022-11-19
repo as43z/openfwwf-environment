@@ -1,0 +1,13 @@
+README
+
+code by Albert Sáez Núñez <albert.saez.nunez@estudiantat.upc.edu>
+
+This project is an environment set up for the development of custom OpenFWWF firmware.
+
+Supported OS:
+	* Debian
+	* Ubuntu
+
+TODOs!
+	- Make installer a bit more general to support other OSs. (If this goes somewhere)
+	- Make the repo downloader clone the repo into the HOME directory! (Quite upsetting that the clone happens into the same directory)
