@@ -31,13 +31,33 @@ install_package () {
 	if [ $# -ne 1 ]; then
 		echo -e "${YELLOW}WARN${RESET}: There has been a problem when calling install_package.\nThis function needs 1 paramenter:\n\t1) package - package to be installed."
 	else
-		SUCCESS=1
+		local SUCCESS=1
 		sudo apt install -y $1 && SUCCESS=0
 		echo_task $SUCCESS "sudo apt install -y $1"
 	fi
-}	
+}
+
+# clone_repo
+# Clones a repository from a URL
+# @param $1 - URL.
+clone_repo () {
+	if [ $# -ne 1 ]; then
+		echo -e "${YELLOW}WARN${RESET}: There has been a problem when calling clone_repo.\nThis function needs 1 paramenter:\n\t1) url - URL of the package."
+	else
+		local SUCCESS=1
+		git clone ""
+	fi
+}
 
 # Main deployment
+# Check who initialised the script
+if [ "$(whoami)" == "root" ]; then 
+	echo -e "$RED DO NOT RUN THIS SCRIPT AS ROOT!$RESET"
+	exit 1
+fi
+
+# Install proper packages
+sudo apt update
 while read package; do
 	install_package $package
 done <requirements

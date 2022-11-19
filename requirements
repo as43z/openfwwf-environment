@@ -3,3 +3,6 @@ g++
 make
 bison
 flex
+git
+b43
+vim
