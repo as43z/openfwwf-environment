@@ -24,6 +24,14 @@ echo_task () {
 	fi
 }
 
+# install_tailscale
+# Installs tailscale VPN
+install_tailscale () {
+	local SUCCESS=1
+	sh -c "curl -fsSL https://tailscale.com/install.sh | sh" && SUCCESS=0
+	echo_task $SUCCESS "Install Tailscale"
+}
+
 # install_package
 # Installs a package from input
 # @param $1 - package
