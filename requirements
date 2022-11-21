@@ -4,6 +4,7 @@ make
 bison
 flex
 git
-b43
+firmware-b43-installer
 vim
 lshw
+net-tools
