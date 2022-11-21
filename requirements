@@ -6,4 +6,5 @@ flex
 git
 firmware-b43-installer
 vim
+lshw
 net-tools
